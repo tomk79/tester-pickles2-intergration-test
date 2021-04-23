@@ -17,9 +17,9 @@ environment:
 
 # branches
 branches:
-  only:
-    - master
-    - develop
+#  only:
+#    - main
+#    - php-7.4-or-less
 
 # fix lineendings in Windows
 init:
