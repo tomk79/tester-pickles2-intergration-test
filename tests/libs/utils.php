@@ -40,7 +40,7 @@ class utils {
 	 */
 	public function px_execute( $path_entry_script, $command ){
 		$output = $this->passthru( [
-			'php', __DIR__.'/../testData/'.$path_entry_script, $command
+			'php', __DIR__.'/../../'.$path_entry_script, $command
 		] );
 		clearstatcache();
 		return $output;
