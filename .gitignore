@@ -4,4 +4,4 @@ Thumbs.db
 ~$*
 !.gitkeep
 vendor/
-#composer.lock
+composer.lock
