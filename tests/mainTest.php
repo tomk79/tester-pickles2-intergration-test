@@ -1,6 +1,6 @@
 <?php
 /**
- * test for pickles2/px-fw-2.x
+ * test for Pickles 2
  */
 class mainTest extends PHPUnit\Framework\TestCase{
 	private $fs;
@@ -55,6 +55,32 @@ class mainTest extends PHPUnit\Framework\TestCase{
 
 		$px->__destruct();// <- required on Windows
 		unset($px);
+	}
+
+	/**
+	 * パブリッシュコマンドを実行してみるテスト
+	 */
+	public function testPublish(){
+		$output = $this->utils->px_execute( 
+			'/project-001/src_px2/.px_execute.php' ,
+			'/?PX=publish.run'
+		);
+		clearstatcache();
+		// var_dump($output);
+		$this->assertTrue( $this->utils->common_error( $output ) );
+	}
+
+	/**
+	 * キャッシュを消去するテスト
+	 */
+	public function testClearcache(){
+		$output = $this->utils->px_execute(
+			'/project-001/src_px2/.px_execute.php' ,
+			'/?PX=clearcache'
+		);
+		clearstatcache();
+		// var_dump($output);
+		$this->assertTrue( $this->utils->common_error( $output ) );
 	}
 
 }
